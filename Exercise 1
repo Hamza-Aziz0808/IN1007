@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class E1 {
+    public static void main(String[] args) {
+        int a, b;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter two integers");
+        a = sc.nextInt();
+        b = sc.nextInt();
+        if (a>=b) {
+            System.out.println("a is greater than b");
+        } else {
+            System.out.println("a is smaller or equal to b");}
+        }
+
+    }
+
