@@ -1,0 +1,19 @@
+public class Overloadingexample {
+    public static void hello() {
+        System.out.println("hello world");
+    }
+    public static int factorial(int numbers) {
+        int fact = 1;
+        while (numbers > 0) {
+            fact *= numbers;
+            numbers--;
+        }
+        hello();
+        return fact;
+    }
+    public static void main(String[] args) {
+        int[] numbers = {5, 10, 20};
+        int fact = factorial(numbers[0]);
+        System.out.println("the factorial of " + numbers[0] + " is " + fact);
+    }
+}
