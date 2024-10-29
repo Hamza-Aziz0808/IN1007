@@ -1,0 +1,10 @@
+public class Factorial {
+    public static void main(String[] args) {
+        int number = 9; //sets the number for which the factorial will be calualated
+        int fact = 1; //intializes the variable 'fact' to store the factorial result
+        for(int i = 1; i <= number; i++) { //loops from 1 up to the number
+            fact = fact * i; //muliplies 'fact' by the current value of 'i' and stores it in fact
+        }
+        System.out.println("the factorial of " + number + " is " + fact); //prints the result
+    }
+}
