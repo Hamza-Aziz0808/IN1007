@@ -1,0 +1,17 @@
+public class Factorial {
+    public static int factorial(int number) {
+        int fact = 1;
+        while (number > 0) {
+            fact = fact * number;
+            number--;
+        }
+        return fact;
+    }
+        public static void main(String[]args){
+        int number =5;
+        int fact = factorial(number);
+            System.out.println("the factorial of " + number + " is " + fact);
+
+        }
+
+}
