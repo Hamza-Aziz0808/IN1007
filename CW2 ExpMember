@@ -1,0 +1,23 @@
+public class ExpeditionMember {
+    private String name;
+    private String Student_ID;
+    public static int member_counter;
+    public ExpeditionMember(String name, String Student_ID) {
+        this.name = name;
+        this.Student_ID = Student_ID;
+        member_counter++;
+    }
+    public void setName(String name){
+        this.name = name;
+    }
+    public void setStudent_ID(String Student_ID){
+        this.Student_ID = Student_ID;
+    }
+    public String getName(){
+        return name;
+    }
+    public String getStudent_ID(){
+        return Student_ID;
+    }
+}
+
