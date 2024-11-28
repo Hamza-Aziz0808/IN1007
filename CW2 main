@@ -1,0 +1,53 @@
+import java.util.ArrayList;
+import java.util.Random;
+
+public class Main {
+    public static void main(String[] args) {
+        String[] allNames = {"hamza", "david", "josh", "steven", "bob", "mark"};
+        String[] allStudent_IDs = {"0001", "0002", "0003", "0004", "0005", "0006"};
+
+        Random random = new Random();
+        int numberOfStudents = random.nextInt(3) + 4;
+
+        ExpeditionMember[] expeditionMembers = new ExpeditionMember[numberOfStudents];
+
+        boolean[] usedIndices = new boolean[allNames.length];
+
+        for (int i = 0; i < numberOfStudents; i++) {
+            int index;
+            do {
+                index = random.nextInt(allNames.length);
+            } while (usedIndices[index]);
+
+            usedIndices[index] = true;
+            expeditionMembers[i] = new ExpeditionMember(allNames[index], allStudent_IDs[index]);
+        }
+        if(numberOfStudents >= 4) {
+            ResearchExpedition pyramidExpedition = new ResearchExpedition(
+                    expeditionMembers[0],
+                    expeditionMembers[1],
+                    expeditionMembers[2]
+            );
+            ResearchExpedition nileExpedition = new ResearchExpedition(
+                    expeditionMembers[numberOfStudents - 3],
+                    expeditionMembers[numberOfStudents - 2],
+                    expeditionMembers[numberOfStudents - 1]
+            );
+            System.out.println("Pyramid Expedition:");
+            System.out.println("Leader: " + pyramidExpedition.getExpeditionLeader());
+            System.out.println("Archivist: " + pyramidExpedition.getArchivist());
+            System.out.println("Field Researcher: " + pyramidExpedition.getFeildResearcher());
+            System.out.println("\nNile Expedition:");
+            System.out.println("Leader: " + nileExpedition.getExpeditionLeader());
+            System.out.println("Archivist: " + nileExpedition.getArchivist());
+            System.out.println("Field Researcher: " + nileExpedition.getFeildResearcher());
+        } else {
+            System.out.println("Not enough members to create two expeditions.");
+        }
+        if (ExpeditionMember.member_counter == expeditionMembers.length) {
+            System.out.println("\nSUCCESS: member_counter matches the length of the members array.");
+        } else {
+            System.out.println("\nERROR: member_counter does not match the length of the members array.");
+        }
+    }
+}
